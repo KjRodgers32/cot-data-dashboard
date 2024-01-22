@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const PairsRouter = require("./routes/PairsRoutes");
 const GBPRouter = require("./routes/GBPRoutes");
 const AUDRouter = require("./routes/AUDRoutes");
 const CADRouter = require("./routes/CADRoutes");
@@ -20,6 +21,7 @@ app.use((req, res, next) => {
 });
 
 // Routes
+app.use("/api/v1/", PairsRouter);
 app.use("/api/v1/gbp", GBPRouter);
 app.use("/api/v1/aud", AUDRouter);
 app.use("/api/v1/cad", CADRouter);

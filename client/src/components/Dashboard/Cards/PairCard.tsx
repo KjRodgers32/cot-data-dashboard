@@ -2,15 +2,13 @@ import React from "react";
 import {
 	BadgeDelta,
 	Card,
-	DeltaType,
 	Flex,
-	Grid,
 	Metric,
 	ProgressBar,
 	Text,
 } from "@tremor/react";
 
-import PairData from "../../types";
+import PairData from "../../../types";
 import {
 	determineSentiment,
 	determineSentimentString,
@@ -22,16 +20,15 @@ import {
 
 interface PairDataProp {
 	item: PairData;
-	key: number;
 }
 
-const PairCard = ({ item, key }: PairDataProp) => {
+const PairCard = ({ item }: PairDataProp) => {
 	return (
-		<Card key={key} className="max-w-[20rem] min-w-[10rem]">
+		<Card className="w-[20rem] min-w-[10rem]">
 			<Flex alignItems="start">
 				<div className="truncate">
 					<Text>
-						{item["Market and Exchange Names"]?.match(/^(.*?)\s*-/)[1].trim()}
+						{item["Market and Exchange Names"].match(/^(.*?)\s*-/)![1].trim()}
 					</Text>
 					<Metric className="truncate">
 						{numberWithCommas(

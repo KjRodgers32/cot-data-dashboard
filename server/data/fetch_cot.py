@@ -60,7 +60,7 @@ cot.cot_year(year=2024, cot_report_type='legacy_fut')
 df = pd.read_csv("annual.txt", index_col=False)
 
 # structure the data into a better format before uploading to our database
-df = df[df['Market and Exchange Names'].str.contains('CHICAGO MERCANTILE') | df['Market and Exchange Names'].str.contains('USD INDEX - ICE FUTURES')]
+df = df[df['Market and Exchange Names'].str.contains('CHICAGO MERCANTILE') | df['Market and Exchange Names'].str.contains('USD INDEX - ICE FUTURES') | df['Market and Exchange Names'].str.contains('GOLD - COMMODITY EXCHANGE INC.')]
 df = df[df['Market and Exchange Names'].isin(list_of_pairs)]
 df = df[columns]
 df = df[df['As of Date in Form YYYY-MM-DD'] == df['As of Date in Form YYYY-MM-DD'].max()]

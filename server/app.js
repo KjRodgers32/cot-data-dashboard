@@ -9,6 +9,7 @@ const NZRouter = require("./routes/NZRoutes");
 const USDRouter = require("./routes/USDRoutes");
 const JPYRouter = require("./routes/JPYRoutes");
 const CHFRouter = require("./routes/CHFRoutes");
+const XAURouter = require("./routes/XAURoutes");
 const app = express();
 
 app.use(cors());
@@ -30,5 +31,6 @@ app.use("/api/v1/nz", NZRouter);
 app.use("/api/v1/usd", USDRouter);
 app.use("/api/v1/jpy", JPYRouter);
 app.use("/api/v1/chf", CHFRouter);
+app.use("/api/v1/xau", XAURouter);
 
 module.exports = app;

@@ -6,7 +6,7 @@ const determineSentiment = (long: number, short: number) => {
 	}
 };
 
-const determineSentimentString = (long: number, short: number) => {
+const determineSentimentString = (long: number, short: number): string => {
 	if (short > long) {
 		return "short";
 	} else {

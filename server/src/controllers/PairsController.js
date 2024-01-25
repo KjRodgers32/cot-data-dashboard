@@ -1,4 +1,4 @@
-const { db } = require("../db");
+const { db } = require("../../db");
 const {
 	ALL_PAIRS_DATA,
 	MOST_RECENT_PAIRS_DATA,

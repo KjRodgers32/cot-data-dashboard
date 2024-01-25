@@ -1,4 +1,4 @@
-const { db } = require("../db");
+const { db } = require("../../db");
 const { ALL_CHF_DATA, MOST_RECENT_CHF_DATA } = require("../queries/CHFQueries");
 
 exports.baseGet = async (req, res) => {

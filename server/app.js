@@ -1,15 +1,15 @@
 const express = require("express");
 const cors = require("cors");
-const PairsRouter = require("./routes/PairsRoutes");
-const GBPRouter = require("./routes/GBPRoutes");
-const AUDRouter = require("./routes/AUDRoutes");
-const CADRouter = require("./routes/CADRoutes");
-const EURRouter = require("./routes/EURRoutes");
-const NZRouter = require("./routes/NZRoutes");
-const USDRouter = require("./routes/USDRoutes");
-const JPYRouter = require("./routes/JPYRoutes");
-const CHFRouter = require("./routes/CHFRoutes");
-const XAURouter = require("./routes/XAURoutes");
+const PairsRouter = require("./src/routes/PairsRoutes");
+const GBPRouter = require("./src/routes/GBPRoutes");
+const AUDRouter = require("./src/routes/AUDRoutes");
+const CADRouter = require("./src/routes/CADRoutes");
+const EURRouter = require("./src/routes/EURRoutes");
+const NZRouter = require("./src/routes/NZRoutes");
+const USDRouter = require("./src/routes/USDRoutes");
+const JPYRouter = require("./src/routes/JPYRoutes");
+const CHFRouter = require("./src/routes/CHFRoutes");
+const XAURouter = require("./src/routes/XAURoutes");
 const app = express();
 
 app.use(cors());

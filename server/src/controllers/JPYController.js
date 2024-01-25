@@ -1,4 +1,4 @@
-const { db } = require("../db");
+const { db } = require("../../db");
 const { ALL_JPY_DATA, MOST_RECENT_JPY_DATA } = require("../queries/JPYQueries");
 
 exports.baseGet = async (req, res) => {

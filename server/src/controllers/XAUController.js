@@ -1,4 +1,4 @@
-const { db } = require("../db");
+const { db } = require("../../db");
 const { ALL_XAU_DATA, MOST_RECENT_XAU_DATA } = require("../queries/XAUQueries");
 
 exports.baseGet = async (req, res) => {

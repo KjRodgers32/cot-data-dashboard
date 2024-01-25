@@ -1,4 +1,4 @@
-const { db } = require("../db");
+const { db } = require("../../db");
 const { ALL_EUR_DATA, MOST_RECENT_EUR_DATA } = require("../queries/EURQueries");
 
 exports.baseGet = async (req, res) => {

@@ -8,7 +8,9 @@ export const useAllRecentPairs = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await axios.get("http://127.0.0.1:3000/api/v1/latest");
+				const response = await axios.get(
+					"https://cot-data-dashboard.vercel.app/api/v1/latest"
+				);
 				setData(response.data.data);
 			} catch (err) {
 				console.log(err);

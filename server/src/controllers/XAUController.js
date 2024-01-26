@@ -11,7 +11,10 @@ exports.baseGet = async (req, res) => {
 			data: result.rows,
 		});
 	} catch (err) {
-		console.error(err);
+		res.status(500).json({
+			status: "error",
+			message: err,
+		});
 	}
 };
 
@@ -25,6 +28,9 @@ exports.latestGet = async (req, res) => {
 			data: result.rows,
 		});
 	} catch (err) {
-		console.error(err);
+		res.status(500).json({
+			status: "error",
+			message: err,
+		});
 	}
 };

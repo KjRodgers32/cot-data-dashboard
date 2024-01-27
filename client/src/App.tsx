@@ -5,11 +5,12 @@ import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrow
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAllRecentPairs } from "./hooks/useAllRecentPairs";
+import CardSkeleton from "./components/UI/CardSkeleton";
 
 const App = () => {
 	const [results, setResults] = useState(3);
 	const [rightClicked, setrightClicked] = useState(true);
-	const data = useAllRecentPairs();
+	const { data, loading } = useAllRecentPairs();
 
 	const slideLeft = () => {
 		if (results! < 3) {
@@ -58,28 +59,41 @@ const App = () => {
 						/>
 					</motion.button>
 					<AnimatePresence>
-						<div className="flex gap-5">
-							{data?.slice(results - 3, results).map((item) => (
-								<motion.div
-									key={
-										item["Market and Exchange Names"] +
-										item["As of Date in Form YYYY-MM-DD"]
-									}
-									initial={
-										rightClicked
-											? { x: 300, opacity: 0.5 }
-											: { x: -300, opacity: 0 }
-									}
-									animate={{ x: 0, opacity: 1 }}
-									exit={
-										rightClicked
-											? { x: -300, opacity: 0 }
-											: { x: 300, opacity: 0.5 }
-									}
-								>
-									<PairCard item={item} />
-								</motion.div>
-							))}
+						<div>
+							{loading && (
+								<div className="flex gap-5 bg-white p-2 rounded-md">
+									{Array.from({ length: 3 }).map((_, i) => (
+										<div key={i}>
+											<CardSkeleton />
+										</div>
+									))}
+								</div>
+							)}
+							{data && (
+								<div className="flex gap-5">
+									{data?.slice(results - 3, results).map((item) => (
+										<motion.div
+											key={
+												item["Market and Exchange Names"] +
+												item["As of Date in Form YYYY-MM-DD"]
+											}
+											initial={
+												rightClicked
+													? { x: 300, opacity: 0.5 }
+													: { x: -300, opacity: 0 }
+											}
+											animate={{ x: 0, opacity: 1 }}
+											exit={
+												rightClicked
+													? { x: -300, opacity: 0 }
+													: { x: 300, opacity: 0.5 }
+											}
+										>
+											<PairCard item={item} />
+										</motion.div>
+									))}
+								</div>
+							)}
 						</div>
 					</AnimatePresence>
 					<motion.button

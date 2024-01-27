@@ -1,10 +1,5 @@
 import { Flex } from "@tremor/react";
 
-type Props = {
-	width: number;
-	height: number;
-};
-
 const LoadingSkeleton = () => {
 	return (
 		<>
